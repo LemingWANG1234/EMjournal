@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Émotions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffe0e0, #ffcccb);
+            color: #333;
+            display: flex;
+            flex-direction: row; /* 横向布局 */
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 20px; /* 增加左右部分间距 */
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            color: #ff6f61;
+        }
+        .analyse-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-section {
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .input-section label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .input-section textarea {
+            width: 90%;
+            max-width: 500px;
+            height: 80px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+            margin: 0 auto;
+            display: block;
+        }
+        .btn-submit {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background-color: #e65e57;
+        }
+        .history-section {
+            margin-top: 30px;
+            width: 100%;
+        }
+        .history-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .history-section p {
+            background: #fce4ec;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .reminder-section {
+            background: #fff5f5; /* 柔和背景色 */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 300px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: sticky; /* 滚动时固定 */
+            top: 20px; /* 距顶部间距 */
+        }
+        .reminder-section h2 {
+            font-size: 18px;
+            color: #ff6f61;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .reminder-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .reminder-section li {
+            background: #ffebee; /* 浅粉色背景 */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .reminder-section li img {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+        .home-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f57c00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-icon a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .home-icon img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin: auto;
+        }
+        .home-icon:hover {
+            background-color: #e65100;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="analyse-container">
+        <header>
+            <h1>Analyse des Émotions</h1>
+            <p>Partagez ou analysez vos émotions pour mieux les comprendre</p>
+        </header>
+        <div class="input-section">
+            <label for="ai-analysis">Analysez vos émotions avec l'IA :</label>
+            <textarea id="ai-analysis" placeholder="Décrivez vos pensées ou émotions ici..."></textarea>
+            <button class="btn-submit">Analyser</button>
+        </div>
+        <div class="input-section">
+            <label for="share-analysis">Partagez vos émotions avec les autres :</label>
+            <textarea id="share-analysis" placeholder="Partagez vos émotions ici..."></textarea>
+            <button class="btn-submit">Partager</button>
+        </div>
+        <div class="history-section">
+            <h2>Exemples récents :</h2>
+            <p><strong>Utilisateur :</strong> Je me sens vraiment stressé à cause de mes examens...</p>
+            <p><strong>IA :</strong> Votre stress semble lié à une forte pression académique. Essayez des pauses et une gestion du temps.</p>
+            <p><strong>Utilisateur :</strong> J'ai passé une journée incroyable, mais je me sens coupable de ne pas avoir travaillé.</p>
+        </div>
+    </div>
+    <div class="reminder-section">
+        <h2>Conseils pour gérer vos émotions</h2>
+        <ul>
+            <li><img src="23.png" alt="Promenade"> Faites une promenade dans la nature</li>
+            <li><img src="23.png" alt="Yoga"> Pratiquez le yoga ou la méditation</li>
+            <li><img src="23.png" alt="Discussion"> Parlez à un ami de confiance</li>
+            <li><img src="23.png" alt="Journal"> Tenez un journal intime</li>
+            <li><img src="23.png" alt="Musique"> Écoutez de la musique relaxante</li>
+            <li><img src="23.png" alt="Respiration"> Respirez profondément et faites une pause</li>
+        </ul>
+    </div>
+    <div class="home-icon">
+        <a href="MY em journal.html" title="Retour à la page d'accueil">
+            <img src="9.png" alt="Accueil" />
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Intime</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        header h1 {
+            color: #4CAF50;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 90%; /* 调整宽度以适应屏幕 */
+            justify-content: space-between;
+            margin: 0 auto; /* 居中容器 */
+        }
+        .main-section, .new-section {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 10px;
+        }
+        .journal-container textarea {
+            width: 100%;
+            height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+        .emoji-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .emoji-container span {
+            font-size: 24px;
+            cursor: pointer;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        .emoji-container span:hover {
+            transform: scale(1.2);
+        }
+        .btn-submit {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+        .past-journal h2,
+        .new-section h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .journal-entry {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .journal-entry h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .journal-entry p {
+            font-size: 16px;
+            margin: 0;
+        }
+        .new-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .new-section img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f57c00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-icon a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .home-icon img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin: auto;
+        }
+        .home-icon:hover {
+            background-color: #e65100;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+        /* Styles pour l'annonce */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 450px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none; /* Caché par défaut */
+        }
+        .popup img {
+            max-width: 100%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 20px;
+        }
+        .popup .close-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon Journal Intime</h1>
+        <p>Exprimez vos pensées et vos émotions librement</p>
+    </header>
+    <div class="container">
+        <div class="main-section">
+            <div class="journal-container">
+                <textarea placeholder="Écrivez vos pensées ici..."></textarea>
+                <div class="emoji-container">
+                    <span>😊</span>
+                    <span>😢</span>
+                    <span>😡</span>
+                    <span>😄</span>
+                    <span>😍</span>
+                </div>
+                <button class="btn-submit">Enregistrer</button>
+            </div>
+            <div class="past-journal">
+                <h2>Mes journaux précédents</h2>
+                <div class="journal-entry">
+            <h3>24 novembre 2024</h3>
+            <p>🌟 Aujourd'hui, je me sens rempli de gratitude. Le soleil était magnifique, et j'ai pris un moment pour respirer profondément et apprécier la vie. 😊</p>
+        </div>
+        <div class="journal-entry">
+            <h3>22 novembre 2024</h3>
+            <p>😔 Ce fut une journée difficile. Je me sens submergé par le travail, mais j'espère trouver du réconfort dans un bon livre ce soir. 📖</p>
+        </div>
+        <div class="journal-entry">
+            <h3>20 novembre 2024</h3>
+            <p>🌈 Quelle journée merveilleuse ! J'ai rencontré un vieil ami et nous avons partagé de nombreux souvenirs heureux. Cela m'a rempli de joie. 😄</p>
+        </div>
+            </div>
+        </div>
+        <div class="new-section">
+            <h2>L'année dernière, mon humeur</h2>
+            <p>🌟 27 novembre 2023 : Aujourd'hui, je me sens paisible et rempli d'énergie. La brise légère m'a rappelé des souvenirs précieux. 😊</p>
+            <img src="21.jpg" alt="Image pour l'humeur du jour">
+        </div>
+    </div>
+    <div class="home-icon">
+        <a href="MY em journal.html" title="Retour à la page d'accueil">
+            <img src="9.png" alt="Accueil" />
+        </a>
+    </div>
+    <div class="popup" id="popup">
+        <div class="close-btn" id="closePopup">×</div>
+        <img src="pub.png" alt="Annonce">
+    </div>
+    <script>
+        window.onload = function () {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'flex';
+        };
+        document.getElementById('closePopup').onclick = function () {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

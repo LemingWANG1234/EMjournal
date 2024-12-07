@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MON EM-Journal</title>
+    <style>
+    body {
+        font-family: Trebuchet MS, serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: linear-gradient(rgba(249, 249, 249, 0.9), rgba(249, 249, 249, 0.9)), 
+                    url('1.jpg') center/cover repeat-x;
+        animation: moveBackground 20s linear infinite;
+    }
+
+    @keyframes moveBackground {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 0 100%;
+        }
+    }
+
+    header {
+        position: relative;
+        background: url('10.jpg') center/cover no-repeat;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .vip-link, .boutique-link {
+        position: absolute;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        background-color: #FFD700;
+        color: black;
+        padding: 5px 10px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, background-color 0.3s;
+    }
+    .vip-link img, .boutique-link img {
+        margin-right: 5px;
+    }
+    .vip-link:hover, .boutique-link:hover {
+        transform: scale(1.1);
+        background-color: #FFC107;
+    }
+    .vip-link {
+        top: 10px;
+        right: 10px;
+    }
+    .vip-link img {
+        width: 50px;
+        height: 50px;
+    }
+    .boutique-link {
+        top: 70px;
+        right: 10px;
+    }
+    .boutique-link img {
+        width: 70px;
+        height: 65px;
+    }
+    main {
+        padding: 20px;
+    }
+    .features-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .feature {
+        flex: 1 1 calc(33.33% - 20px);
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .feature img {
+        width: 100%;
+        max-width: 250px;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+    .feature img:hover {
+        transform: scale(1.05);
+    }
+    footer {
+        text-align: center;
+        padding: 5px;
+        background-color: #4CAF50;
+        color: white;
+        margin-top: 5px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Début de la fenêtre de verrouillage -->
+    <div id="password-popup" class="popup">
+        <div class="popup-content">
+            <h2>Accès sécurisé</h2>
+            <p>Utilisateur : <strong>ABC</strong></p>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" placeholder="Entrez le mot de passe">
+            <button onclick="verifyPassword()">Se connecter</button>
+            <p id="error-message" style="color: red; display: none;">Mot de passe incorrect. Réessayez !</p>
+        </div>
+    </div>
+    <!-- Fin de la fenêtre de verrouillage -->
+
+    <script>
+        // Vérifier si c'est la première visite
+        if (!sessionStorage.getItem('unlocked')) {
+            document.getElementById('password-popup').style.display = 'flex';
+        }
+
+        // Fonction de vérification du mot de passe
+        function verifyPassword() {
+            const password = document.getElementById('password').value;
+            if (password === '1234') {
+                document.getElementById('password-popup').style.display = 'none';
+                sessionStorage.setItem('unlocked', true); // Marquer comme déverrouillé
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    </script>
+
+    <style>
+        /* Style pour la popup */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+        .popup-content h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .popup-content input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .popup-content button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .popup-content button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</body>
+
+<body>
+    <header>
+        <a href="VIP.html" class="vip-link">
+            <img src="14.png" alt="VIP">
+            VIP
+        </a>
+        <a href="shop.html" class="boutique-link">
+            <img src="15.png" alt="Boutique">
+            Boutique
+        </a>
+        <h1>MON EM-Journal</h1>
+        <p>Enregistrez vos émotions, partagez vos histoires, échangez avec d'autres</p>
+    </header>
+    <main>
+        <section class="features-row">
+            <div class="feature">
+                <h2>Écrire un journal intime</h2>
+                <p>Notez vos pensées et émotions chaque jour.
+                    <br>Utilisez nos designs uniques et votre créativité !</p>
+                <a href="journal.html"><img src="2.jpg" alt="Journal Intime"></a>
+            </div>
+            <div class="feature">
+                <h2>Analyser vos émotions</h2>
+                <p>Nous vous aidons à atténuer les émotions négatives.
+                    <br>Partagez vos émotions avec vos amis.</p>
+                <a href="analyse.html"><img src="3.jpg" alt="Analyser et Partager"></a>
+            </div>
+            <div class="feature">
+                <h2>Échanger avec les autres</h2>
+                <p>Interagissez avec d'autres utilisateurs et soutenez-vous mutuellement.</p>
+                <a href="echange.html"><img src="4.jpg" alt="Échanger"></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 MON EM-Journal. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
