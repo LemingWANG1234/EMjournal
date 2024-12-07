@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejoignez notre VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(255, 235, 205, 0.8), rgba(255, 160, 122, 0.8)), 
+                        url('vip-background.jpg') center/cover no-repeat;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #ff4500;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        main {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .vip-benefits {
+            margin-bottom: 30px;
+        }
+        .vip-benefits h2 {
+            color: #ff4500;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .vip-benefits ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .vip-benefits li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .vip-benefits li img {
+            width: 30px;
+            margin-right: 10px;
+        }
+        .pricing {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .pricing .plan {
+            background: #ffa07a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .pricing .plan:hover {
+            transform: scale(1.05);
+        }
+        .pricing .plan h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .pricing .plan p {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        .pricing .plan button {
+            margin-top: 10px;
+            background: #ff4500;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pricing .plan button:hover {
+            background: #e04e2a;
+        }
+        .home-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f57c00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-icon a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .home-icon img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin: auto;
+        }
+        .home-icon:hover {
+            background-color: #e65100;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <header>Rejoignez notre VIP, profitez de plus de services !</header>
+    <main>
+        <section class="vip-benefits">
+            <h2>Pourquoi devenir VIP ?</h2>
+            <ul>
+                <li><img src="12.png" alt="Sans publicité">Supprimez toutes les publicités.</li>
+                <li><img src="13.png" alt="Plus de designs">Accédez à plus de styles pour vos journaux.</li>
+                <li><img src="11.png" alt="AI illimitée">Utilisez l'AI du site de manière illimitée.</li>
+            </ul>
+        </section>
+        <section class="pricing">
+            <div class="plan">
+                <h3>4,99€ / Mois</h3>
+                <p>Profitez de tous les avantages VIP pour un mois.</p>
+                <button>Souscrire</button>
+            </div>
+            <div class="plan">
+                <h3>29,99€ / An</h3>
+                <p>Économisez davantage avec un abonnement annuel !</p>
+                <button>Souscrire</button>
+            </div>
+        </section>
+    </main>
+    <footer>&copy; 2024 MON EM-Journal. Tous droits réservés.</footer>
+    <div class="home-icon">
+        <a href="MY em journal.html" title="Retour à la page d'accueil">
+            <img src="9.png" alt="Accueil" />
+        </a>
+    </div>
+</body>
+</html>
